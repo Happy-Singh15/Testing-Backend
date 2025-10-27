@@ -8,6 +8,7 @@ env/
 
 # Django database
 db.sqlite3
+mydatabase
 
 # Environment variables
 .env
