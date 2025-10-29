@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&5nwg=ruhui5b#z3j^a^3##yr80h=u0rpd@796n0d#^4p74stj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['melany-corniculate-uriel.ngrok-free.dev','localhost']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'api',
 ]
@@ -49,6 +50,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://kvhs99dm-5173.inc1.devtunnels.ms"
 ]
 
 ROOT_URLCONF = 'home.urls'
