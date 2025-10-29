@@ -37,8 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #third part api
+    'algoliasearch_django',
+
+    #third party packages
     'corsheaders',
     'rest_framework',
+
+    #apps
     'api',
 ]
 
@@ -134,3 +140,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ALGOLIA = {
+    'APPLICATION_ID': 'YHB8CHJ8CT',
+    'API_KEY': 'd9e6485d0b42b787ecd7443f561c8cd0',
+}
