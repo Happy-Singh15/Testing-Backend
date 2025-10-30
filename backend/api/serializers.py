@@ -1,15 +1,6 @@
 from rest_framework import serializers
 
-from .models import Url, Exercise
-
-class UrlSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Url
-        fields=[
-            'id',
-            'title',
-            'url',
-        ]
+from .models import Exercise
 
 class ExerciseSerializer(serializers.ModelSerializer):
     class Meta:
@@ -17,8 +8,10 @@ class ExerciseSerializer(serializers.ModelSerializer):
         fields =[
             'id',
             'title',
-            'exercise_type',
+            'reps_sets',
             'bodypart',
-            'equipment',
+            'exercise_type',
+            # 'equipment',
             'level',
+            'url',
       ]
