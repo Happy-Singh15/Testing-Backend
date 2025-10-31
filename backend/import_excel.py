@@ -8,6 +8,11 @@ from django.db import transaction
 import pandas as pd
 from api.models import Exercise
 
+
+print('Deleting previous data')
+Exercise.objects.all().delete()
+print('Deleted previous data')
+
 df_exercise = pd.read_csv('data/Exercise__data.csv')
 print(f"Total rows to import: {len(df_exercise)}")
 
