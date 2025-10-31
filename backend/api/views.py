@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from algoliasearch_django import raw_search
@@ -11,6 +12,7 @@ from .serializers import ExerciseSerializer
 class ExerciseListAPIView(generics.ListAPIView):
     queryset = Exercise.objects.all()
     serializer_class = ExerciseSerializer
+    permission_classes =[IsAuthenticated]
 
     def perform_create(self, serializer):
         return super().perform_create(serializer)

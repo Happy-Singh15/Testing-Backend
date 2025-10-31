@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from clerk_backend_api import Clerk
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -61,7 +64,8 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://kvhs99dm-5173.inc1.devtunnels.ms"
+    "https://kvhs99dm-5173.inc1.devtunnels.ms",
+    'http://localhost:5173'
 ]
 
 ROOT_URLCONF = 'home.urls'
@@ -141,7 +145,23 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'api.authentication.ClerkAuthentication',
+    ]
+}
+
+FRONTEND_ORIGIN = "http://localhost:5173"
+
+
+load_dotenv()
+
+ALGOLIA_SECRET_KEY = os.getenv('ALGOLIA_SECRET_KEY')
 ALGOLIA = {
     'APPLICATION_ID': 'YHB8CHJ8CT',
-    'API_KEY': 'd9e6485d0b42b787ecd7443f561c8cd0',
+    'API_KEY': ALGOLIA_SECRET_KEY,
 }
+
+CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
+
+clerk_client = Clerk(bearer_auth=CLERK_SECRET_KEY)
