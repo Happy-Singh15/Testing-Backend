@@ -7,3 +7,5 @@ psycopg2-binary
 pandas
 openpyxl
 algoliasearch
+clerk-backend-api
+python-dotenv
