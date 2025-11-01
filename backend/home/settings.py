@@ -151,7 +151,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-FRONTEND_ORIGIN = "http://localhost:5173"
+FRONTEND_ORIGIN = 'https://kvhs99dm-5173.inc1.devtunnels.ms'
 
 
 load_dotenv()
