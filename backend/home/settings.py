@@ -65,6 +65,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "https://kvhs99dm-5173.inc1.devtunnels.ms",
+    'https://symmetrical-fishstick-q7g579jwgvq4cxr6j-5173.app.github.dev',
     'http://localhost:5173'
 ]
 
@@ -151,7 +152,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-FRONTEND_ORIGIN = 'https://kvhs99dm-5173.inc1.devtunnels.ms'
+FRONTEND_ORIGIN = 'https://symmetrical-fishstick-q7g579jwgvq4cxr6j-5173.app.github.dev'
 
 
 load_dotenv()
