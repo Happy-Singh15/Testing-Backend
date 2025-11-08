@@ -65,7 +65,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://localhost:5173"
+    "http://localhost:5173"
 ]
 
 ROOT_URLCONF = 'home.urls'
@@ -146,7 +146,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-FRONTEND_ORIGIN = "https://localhost:5173"
+FRONTEND_ORIGIN = "http://localhost:5173"
 
 
 load_dotenv()
