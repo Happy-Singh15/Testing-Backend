@@ -166,7 +166,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-# FRONTEND_ORIGIN = "http://localhost:5173"
+FRONTEND_ORIGIN = "http://localhost:5173"
 
 
 load_dotenv()
