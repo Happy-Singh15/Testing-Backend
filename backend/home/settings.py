@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 from clerk_backend_api import Clerk
 from dotenv import load_dotenv
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&5nwg=ruhui5b#z3j^a^3##yr80h=u0rpd@796n0d#^4p74stj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['melany-corniculate-uriel.ngrok-free.dev','localhost']
 
@@ -64,9 +65,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://kvhs99dm-5173.inc1.devtunnels.ms",
-    'https://symmetrical-fishstick-q7g579jwgvq4cxr6j-5173.app.github.dev',
-    'http://localhost:5173'
+    "https://kvhs99dm-5173.inc1.devtunnels.ms"
 ]
 
 ROOT_URLCONF = 'home.urls'
@@ -94,12 +93,7 @@ WSGI_APPLICATION = 'home.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
-        'USER': 'myuser',
-        'PASSWORD': 'happy1508',
-        'HOST': 'localhost',
-        'PORT': '5432',
+         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 }
 
@@ -152,7 +146,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-FRONTEND_ORIGIN = 'https://symmetrical-fishstick-q7g579jwgvq4cxr6j-5173.app.github.dev'
+FRONTEND_ORIGIN = "https://kvhs99dm-5173.inc1.devtunnels.ms"
 
 
 load_dotenv()

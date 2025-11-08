@@ -5,6 +5,6 @@ from .models import Exercise
 
 @register(Exercise)
 class ProductIndex(AlgoliaIndex):
-    fields = ('title', 'bodypart', 'level')   # fields to be indexed
+    fields = ('title', 'bodypart', 'level','url')   # fields to be indexed
     settings = {'searchableAttributes': ['bodypart']}
     index_name = 'exercise_index'
