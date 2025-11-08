@@ -182,3 +182,7 @@ ALGOLIA = {
 CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
 
 clerk_client = Clerk(bearer_auth=CLERK_SECRET_KEY)
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
