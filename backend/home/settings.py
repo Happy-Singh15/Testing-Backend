@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-&5nwg=ruhui5b#z3j^a^3##yr80h=u0rpd@796n0d#^4p74stj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['melany-corniculate-uriel.ngrok-free.dev','localhost']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -65,7 +65,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://kvhs99dm-5173.inc1.devtunnels.ms"
+    "https://localhost:5173"
 ]
 
 ROOT_URLCONF = 'home.urls'
@@ -146,7 +146,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-FRONTEND_ORIGIN = "https://kvhs99dm-5173.inc1.devtunnels.ms"
+FRONTEND_ORIGIN = "https://localhost:5173"
 
 
 load_dotenv()
