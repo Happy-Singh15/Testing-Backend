@@ -64,9 +64,9 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5173"
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173"
+]
 
 
 CORS_ALLOW_METHODS = [
@@ -166,7 +166,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-FRONTEND_ORIGIN = "http://localhost:5173"
+# FRONTEND_ORIGIN = "http://localhost:5173"
 
 
 load_dotenv()
@@ -182,5 +182,5 @@ CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
 clerk_client = Clerk(bearer_auth=CLERK_SECRET_KEY)
 
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_CREDENTIALS = True
