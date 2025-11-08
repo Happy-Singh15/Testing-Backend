@@ -10,3 +10,4 @@ algoliasearch
 clerk-backend-api
 python-dotenv
 dj-database-url
+gunicorn
