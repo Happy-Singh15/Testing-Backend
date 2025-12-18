@@ -13,12 +13,13 @@ print('Deleting previous data')
 Exercise.objects.all().delete()
 print('Deleted previous data')
 
-df_exercise = pd.read_csv('data/Exercise__data.csv')
+df_exercise = pd.read_csv('../data/Exercise__data.csv')
 print(f"Total rows to import: {len(df_exercise)}")
 
 count = 0
 with transaction.atomic():
     for _, row in df_exercise.iterrows():
+        print(f"row {row} is pushing to db")
         Exercise.objects.create(
             title = row['Exercise_name'],
             reps_sets = row['Exercise_count'],
